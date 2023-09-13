@@ -25,6 +25,10 @@ class SearchAlgorithm:
 class BuscaLargura (SearchAlgorithm):
 
     def search (self, initialState,pruning='without', trace=False): 
+        # Define valid pruning options
+        valid_pruning_options = ['without', 'father-son', 'general']
+        if pruning not in valid_pruning_options:
+            raise ValueError(f"Invalid pruning option: {pruning}. Valid options are {valid_pruning_options}")
         # List to keep track of the visited nodes
         states = []
         #Creating a Queue
@@ -55,6 +59,10 @@ class BuscaLargura (SearchAlgorithm):
 class BuscaProfundidade (SearchAlgorithm):
 
     def search (self, initialState, m,pruning='without', trace=False): 
+        # Define valid pruning options
+        valid_pruning_options = ['without', 'father-son', 'general']
+        if pruning not in valid_pruning_options:
+            raise ValueError(f"Invalid pruning option: {pruning}. Valid options are {valid_pruning_options}")
         # List to keep track of the visited nodes
         states = []
         #Using list as stack
@@ -100,6 +108,10 @@ class BuscaProfundidadeIterativa (SearchAlgorithm):
 class BuscaCustoUniforme (SearchAlgorithm):
 
     def search (self, initialState,pruning='without', trace=False):
+        # Define valid pruning options
+        valid_pruning_options = ['without', 'father-son', 'general']
+        if pruning not in valid_pruning_options:
+            raise ValueError(f"Invalid pruning option: {pruning}. Valid options are {valid_pruning_options}")
         # List to keep track of the visited nodes
         states = []
         open = []
@@ -132,6 +144,10 @@ class BuscaCustoUniforme (SearchAlgorithm):
 class BuscaGananciosa (SearchAlgorithm):
 
     def search (self, initialState,pruning='without', trace=False):
+        # Define valid pruning options
+        valid_pruning_options = ['without', 'father-son', 'general']
+        if pruning not in valid_pruning_options:
+            raise ValueError(f"Invalid pruning option: {pruning}. Valid options are {valid_pruning_options}")
         # List to keep track of the visited nodes
         states = []
         open = []
@@ -171,6 +187,10 @@ class BuscaGananciosa (SearchAlgorithm):
 class AEstrela (SearchAlgorithm):
 
     def search (self, initialState, pruning='without', trace=False):
+        # Define valid pruning options
+        valid_pruning_options = ['without', 'father-son', 'general']
+        if pruning not in valid_pruning_options:
+            raise ValueError(f"Invalid pruning option: {pruning}. Valid options are {valid_pruning_options}")
         # List to keep track of the visited nodes
         states = []
         open = []
